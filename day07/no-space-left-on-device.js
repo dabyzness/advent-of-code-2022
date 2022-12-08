@@ -95,7 +95,6 @@ const head = new Node(null, "/");
 let curr = head;
 
 const inp = input.split("\n").map((e) => e.split(" "));
-let total = 0;
 
 for (let i = 0; i < inp.length; i += 1) {
   if (inp[i][0] === "$") {
@@ -109,6 +108,7 @@ for (let i = 0; i < inp.length; i += 1) {
     }
 
     if (inp[i][2] === "..") {
+      curr.sum();
       curr = curr.parent;
     } else {
       curr = curr.children.find((child) => child.name === inp[i][2]);
@@ -120,13 +120,10 @@ for (let i = 0; i < inp.length; i += 1) {
   inp[i][0] === "dir"
     ? curr.children.push(new Node(curr, inp[i][1]))
     : curr.children.push(new Node(curr, inp[i][1], parseInt(inp[i][0])));
-
-  if (inp[i][0] !== "dir") {
-    total += parseInt(inp[i][0]);
-  }
 }
 
-console.log(total);
+head.sum();
+console.log(head.size);
 
 function calcSizes(node) {
   if (!node.children.length) {
