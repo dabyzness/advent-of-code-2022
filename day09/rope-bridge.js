@@ -267,31 +267,15 @@ function moveHead(head, /*next,*/ direction) {
   switch (direction) {
     case "U":
       head.y += 1;
-      // if (!isAdjacent(head, tail)) {
-      //   tail.x = head.x;
-      //   tail.y = head.y - 1;
-      // }
       break;
     case "D":
       head.y -= 1;
-      // if (!isAdjacent(head, tail)) {
-      //   tail.x = head.x;
-      //   tail.y = head.y + 1;
-      // }
       break;
     case "L":
       head.x -= 1;
-      // if (!isAdjacent(head, tail)) {
-      //   tail.x = head.x + 1;
-      //   tail.y = head.y;
-      // }
       break;
     case "R":
       head.x += 1;
-      // if (!isAdjacent(head, tail)) {
-      //   tail.x = head.x - 1;
-      //   tail.y = head.y;
-      // }
       break;
   }
 }
