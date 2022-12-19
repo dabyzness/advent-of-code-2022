@@ -200,10 +200,12 @@ while (true) {
   }
 }
 
-for (const el of map.map((e) => e.join().replaceAll(",", ""))) {
-  console.log(el);
-}
+// Print the final grid
+// for (const el of map.map((e) => e.join().replaceAll(",", ""))) {
+//   console.log(el);
+// }
 
+// Answer
 console.log(numSand - 1);
 
 function handleFall() {
